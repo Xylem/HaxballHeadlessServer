@@ -73,7 +73,7 @@ class StatsGathering {
       goalsDescription: this.goals,
     };
 
-    const headers = window.localStorage.getItem('statsAPI') === undefined
+    const headers = window.localStorage.getItem('statsAPIKey') === undefined
       ? { 'Content-Type': 'application/json' }
       : { 'Content-Type': 'application/json', 'X-Api-Key': window.localStorage.getItem('statsAPIKey') };
     fetch(window.localStorage.getItem('statsAPI'), { method: 'POST', headers, body: JSON.stringify(matchData) })
